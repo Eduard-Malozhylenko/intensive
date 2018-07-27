@@ -169,6 +169,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/post-type.php';
 
 /**
+ * Redux Options panel.
+ */
+require get_template_directory() . '/inc/sample-config.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
