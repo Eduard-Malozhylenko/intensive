@@ -24,21 +24,25 @@
         </div>
         <div class="column-s">
             <h3>Support</h3>
-            <ul>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
-            </ul>
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'footerfirst',
+                'menu_id'        => 'footer-menu',
+                'menu_class'          => '',
+                'container' =>'ul',
+            ) );
+            ?>
         </div>
         <div class="column-t">
             <h3>Users information</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Special offers</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Suggestions</a></li>
-            </ul>
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'footersecond',
+                'menu_id'        => 'footer-2-menu',
+                'menu_class'          => '',
+                'container' =>'ul',
+            ) );
+            ?>
         </div>
         <div class="column-l">
             <h3>Contacts</h3>

@@ -10,7 +10,7 @@
 
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "redux_demo";
+    $opt_name = "intensiv_option";
 
     // This line is only for altering the demo. Can be easily removed.
     $opt_name = apply_filters( 'redux_demo/opt_name', $opt_name );
@@ -276,18 +276,12 @@
 
      */
 
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Header Setting', 'redux-framework-demo' ),
-        'id'               => 'header',
-        'desc'             => __( 'Setting for header', 'redux-framework-demo' ),
-        'customizer_width' => '400px',
-        'icon'             => 'el el-bell'
-    ) );
+
 
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Upload Logo', 'redux-framework-demo' ),
-        'id'               => 'logo',
-        'subsection'       => true,
+        'title'            => __( 'Header', 'redux-framework-demo' ),
+        'id'               => 'header',
+//        'subsection'       => true,
         'customizer_width' => '450px',
         'desc'             => __( 'Upload your logo', 'redux-framework-demo' ) ,
         'fields'           => array(
@@ -305,6 +299,23 @@
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
                 //)
+            ),
+            array(
+                'id'       => 'header-email',
+                'type'     => 'text',
+                'title'    => __( 'Header Email', 'redux-framework-demo' ),
+                'subtitle' => __( 'Example 1', 'redux-framework-demo' ),
+                'desc'     => __( 'Example 2', 'redux-framework-demo' ),
+                'validate' => 'email',
+                'msg'      => 'Type a correct email',
+                'default'  => 'mail@website.com',
+            ),
+            array(
+                'id'       => 'header-phone',
+                'type'     => 'text',
+                'title'    => __( 'Header Phone', 'redux-framework-demo' ),
+                'subtitle' => __( 'Example 1', 'redux-framework-demo' ),
+                'desc'     => __( 'Example 2', 'redux-framework-demo' ),
             ),
         )
     ) );
