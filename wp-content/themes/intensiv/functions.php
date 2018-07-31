@@ -146,6 +146,16 @@ function intensiv_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'intensiv_scripts' );
 
+function ale_add_scripts($hook) {
+    if ( $hook == 'post.php' || $hook == 'post-new.php' || $hook == 'page-new.php' || $hook == 'page.php' ) {
+        wp_enqueue_script( 'aletheme_metaboxes',
+            get_template_directory_uri() . '/inc/js/metaboxes.js',
+            array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'media-upload', 'thickbox' ) );
+    }
+}
+add_action( 'admin_enqueue_scripts', 'ale_add_scripts', 10 );
+
+
 /**
  * Implement the Custom Header feature.
  */
@@ -175,6 +185,16 @@ require get_template_directory() . '/inc/post-type.php';
  * Redux Options panel.
  */
 require get_template_directory() . '/inc/sample-config.php';
+
+/**
+ * Breadcrumbs function.
+ */
+require get_template_directory() . '/inc/breadcrumbs.php';
+
+/**
+ * Metabox function.
+ */
+require get_template_directory() . '/inc/metaboxes.php';
 
 /**
  * Load Jetpack compatibility file.

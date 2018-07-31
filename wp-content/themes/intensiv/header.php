@@ -88,5 +88,3 @@ global $intensiv_option;
 
 </section>
 
-
-<div id="content" class="site-content">
